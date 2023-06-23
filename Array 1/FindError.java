@@ -16,6 +16,7 @@ import java.util.Arrays;
 public class FindError {
 
     static int[] missingNumber(int num[]){
+        Arrays.sort(num);
         int n=num.length;
         int duplicate=0;
         int sum=0;
