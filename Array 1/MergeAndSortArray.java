@@ -20,10 +20,17 @@ import java.util.Arrays;
 public class MergeAndSortArray {
 
     public static void mergeAndSort(int num1[],int m ,int num2[],int n){
-        for(int i=m;i<m+n;i++){
-            num1[i]=num2[i-m];
+        int p1 = m-1;
+        int p2 = n-1;
+
+        for(int p = m+n-1;p>=0;p--){
+            if(p2<0)
+                break;
+            if(p1>=0 && num1[p1]>num2[p2])
+                num1[p]= num1[p1--];
+            else
+                num1[p]=num2[p2--];
         }
-        Arrays.sort(num1);
     }
     public static void main(String[] args) {
         
